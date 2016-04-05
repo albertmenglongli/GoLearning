@@ -7,6 +7,10 @@ import (
 	"path/filepath"
 )
 
+const (
+	SEPARATOR = "  "
+)
+
 var bigDigits = [][]string{
 	{
 		"  000  ",
@@ -49,6 +53,7 @@ func main() {
 			digit := stringOfDigits[column] - '0'
 			if 0 <= digit && digit <= 2 {
 				line += bigDigits[digit][row]
+				line += SEPARATOR
 			} else {
 				log.Fatal("invalid whole number")
 			}
